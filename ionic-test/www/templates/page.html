@@ -1,31 +1,46 @@
 <ion-view title="Descubra Mundo">
     <ion-content overflow-scroll="true" padding="true" class="has-header">
-        <h3>Bem vindo ao Descubra o Mundo!</h3>
-            <p>Que tal aprender algo totalmente novo hoje?</p>
+        <center><h3>Bem vindo ao Descubra o Mundo!</h3></center>
+            <center><p>Que tal aprender algo totalmente novo hoje?</p></center>
         <ion-list>
-            <label class="item item-input">
+            <!--<label class="item item-input">
                 <i class="icon ion-search placeholder-icon"></i>
                 <input type="search" placeholder="" ng-model="busca2">
             </label>
-            <a class="button button-stable button-block button button-positive" ng-click="buscaAPI(busca2)">Search!</a>
+            <a class="button button-stable button-block button button-positive" ng-click="buscaAPI(busca2)">Search!</a> -->
             <!--<ion-item class="item-thumbnail-left" ng-repeat="bleh in fantasma | filter:busca2" ng-if="bleh.podeservisto">-->
             <!--    <img>-->
             <!--    <h2>{{bleh.nome}}</h2>-->
             <!--    <p>{{bleh.tipo}}</p>-->
             <!--</ion-item>-->
+            <div class="list">
+
+  <div class="item item-input-inset">
+    <label class="item-input-wrapper">
+      <input type="text" placeholder="Busca País" ng-model="busca2">
+       </label>
+    <button class="button button-small" ng-click="buscaAPI(busca2)">
+      Go!
+    </button>
+  </div>
+
+</div>
+        
         </ion-list>
         <!--<p>{{ busca2 }}</p>
         <a class="button button-stable button-block button button-royal" ng-click="alert()">Try me!</a>
         Coloque seu nome:
             <input type="text" ng-model="sometext" ng-show = true />
             <h1>Oi, {{ sometext }}</h1>-->
-        <div id ="paragrafo" ng-repeat="d in data">
-        <h2>{{d.name}}</h2>
-            <a class="button button-stable button-block button button-positive" >{{d.languages}}</a>
-            <p>Capital: {{d.capital}}</p>
-            <p>Continente: {{d.region}}</p>
-            <p>População: {{d.population}}</p>
-            <p>Fronteiras: {{d.borders}}</p>
-        </<div>
+        <center><div id ="paragrafo" ng-repeat="d in data | filter:busca2">
+        <h2><strong class="dark"></strong>{{d.name}}</strong></h2>
+            <!--<a class="button button-stable button-block button button-positive" >{{d.languages}}</a> -->
+            <p><strong class="dark">Capital:</strong> {{d.capital}}</p>
+            <p><strong class="dark">Continente:</strong> {{d.region}}</p>
+            <p><strong class="dark">População:</strong> {{d.population}}</p>
+            <p><strong class="dark">Fronteiras: </strong>{{d.borders}}</p>
+            <p><strong class="dark">Língua:</strong> {{d.languages}}</p>
+        </div></center>
+    <center><img src="http://bbmri-wiki.wdfiles.com/local--files/start/world-flags-sphere.png"/></center>
     </ion-content>
 </ion-view>
