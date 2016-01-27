@@ -16,9 +16,7 @@ angular.module('app.routes', [])
       controller: 'pageCtrl'
     })
         
-      
     
-      
         
     .state('tabsController.cameraTabDefaultPage', {
       url: '/page3',
@@ -60,12 +58,12 @@ angular.module('app.routes', [])
         
       
     
-      
-    .state('tabsController', {
-      url: '/page2',
-      abstract:true,
-      templateUrl: 'templates/tabsController.html'
-    })
+        
+      .state('tabsController', {
+        url: '/page2',
+        abstract:true,
+        templateUrl: 'templates/tabsController.html'
+      })
       
     ;
 
