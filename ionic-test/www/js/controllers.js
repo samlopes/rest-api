@@ -1,12 +1,6 @@
 angular.module('app.controllers', [])
   
 .controller('pageCtrl', function($scope, $http) {
-    $scope.fantasma = [
-        {"nome":"Gengar", "tipo":"Assustador", "podeservisto": true},
-        {"nome": "Gasparzinho", "tipo":"Camarada", "podeservisto": true},
-        {"nome": "Poltergeist", "tipo":"Fenomeno", "podeservisto": false},
-        {"nome": "Homem de Marshmallow", "tipo":"Gigante", "podeservisto":true}
-        ];
         
     $scope.buscaAPI = function(busca2){
         // Simple GET request example:
@@ -20,30 +14,14 @@ angular.module('app.controllers', [])
             alert(JSON.stringify(response));
           });
     };
-    
-    $scope.alert = function(){
-        alert("Oi");
-    }
-    
-    $scope.sometext = function(){
-        $scope.escrito = true;
-    }
 })
    
-.controller('cameraTabDefaultPageCtrl', function($scope) {
+.controller('homeCtrl', function($scope) {
    // $scope.bleh = "bleeeeeeeeeeeeh";
     $scope.bleh = {"blih": "blaaaaaaaah"};
     $scope.animaisMarinhos = ["Baleia", "Golfinho", "Tubarão"];
     $scope.alertbleh = function(){
         alert("bleeeeeeh");
     }
-})
-   
-.controller('cartTabDefaultPageCtrl', function($scope) {
-
-})
-   
-.controller('cloudTabDefaultPageCtrl', function($scope) {
-
 })
     
