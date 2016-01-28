@@ -21,7 +21,7 @@
 
                 <div class="item item-input-inset">
                     <label class="item-input-wrapper">
-                        <input type="text" placeholder="Busca País" ng-model="busca2">
+                        <input type="text" placeholder="Busque pelo País" ng-model="busca2">
                     </label>
                     <button class="button button-small" ng-click="buscaAPI(busca2)">
                         Go!
@@ -37,17 +37,16 @@
             <input type="text" ng-model="sometext" ng-show = true />
             <h1>Oi, {{ sometext }}</h1>-->
         <center>
-            <div id="paragrafo" ng-repeat="d in data | filter:busca2">
+            <div ng-repeat="d in data | filter:busca2">
                 <h2><strong class="dark"></strong>{{d.name}}</strong></h2>
                 <!--<a class="button button-stable button-block button button-positive" >{{d.languages}}</a> -->
                 <p><strong class="dark">Capital:</strong> {{d.capital}}</p>
                 <p><strong class="dark">Continente:</strong> {{d.region}}</p>
                 <p><strong class="dark">População:</strong> {{d.population}}</p>
-                <p><strong class="dark">Fronteiras: </strong>{{d.borders}}</p>
-                <p><strong class="dark">Língua:</strong> {{d.languages}}</p>
+                <p><strong class="dark">Fronteiras: </strong><span ng-repeat="b in d.borders"> {{b}}</p></span>
+                <p><strong class="dark">Língua:</strong> <span ng-repeat="l in d.languages"> {{l}}</span></p>
             </div>
         </center>
         <center><img src="http://bbmri-wiki.wdfiles.com/local--files/start/world-flags-sphere.png" /></center>
-
     </ion-content>
 </ion-view>
